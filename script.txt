@@ -1,0 +1,17 @@
+create database BD_ASP_B;
+
+use BD_ASP_B;
+
+create table users(
+	userID int primary key auto_increment,
+    userName varchar(40) not null,
+    userEmail varchar(100) unique not null,
+    userPassword varchar(250) not null,
+    userLevel varchar(40) default "user",
+    userRegisterDate datetime default current_timestamp
+);
+
+insert into users(userName, userEmail, userPassword, userLevel) values('Admin', 'admin@email.com', '123456', 'admin');
+insert into users(userName, userEmail, userPassword) values('user', 'user@email.com', '123456');
+
+select * from users;
