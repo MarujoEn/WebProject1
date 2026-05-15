@@ -1,9 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
+using WebProject1.Interfaces;
 using WebProject1.Models;
 
 namespace WebProject1.Repositories
 {
-    public class UserRepositorie(IConfiguration config)
+    public class UserRepositorie(IConfiguration config) : IUserRepositorie // Herança
     {
         //variavel privada e somente leitura para armazenar a string de conexão
         private readonly string _connectionString = config.GetConnectionString("Connection");
